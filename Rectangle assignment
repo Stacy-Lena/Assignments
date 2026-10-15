@@ -1,0 +1,5 @@
+Take-home
+Design a class called Rectangle with private members width and length.
+The class should have public member functions for getting and setting the width and length, as well as functions for calculating the area and perimeter.
+In the main function, create suitable examples that demonstrate creating Rectangle objects, setting and retrieving their dimensions, and calculating their area and perimeter.
+
