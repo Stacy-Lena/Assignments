@@ -1,5 +1,68 @@
-Take-home
-Design a class called Rectangle with private members width and length.
-The class should have public member functions for getting and setting the width and length, as well as functions for calculating the area and perimeter.
-In the main function, create suitable examples that demonstrate creating Rectangle objects, setting and retrieving their dimensions, and calculating their area and perimeter.
 
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+private:
+    double width;
+    double length;
+
+public:
+    // Functions for setting dimensions
+    void setWidth(double w) {
+        width = w;
+    }
+
+    void setLength(double l) {
+        length = l;
+    }
+
+    // Functions for retrieving dimensions
+    double getWidth() {
+        return width;
+    }
+
+    double getLength() {
+        return length;
+    }
+
+    // Function to calculate area
+    double calculateArea() {
+        return width * length;
+    }
+
+    // Function to calculate perimeter
+    double calculatePerimeter() {
+        return 2 * (width + length);
+    }
+};
+
+int main() {
+    // Create Rectangle objects
+    Rectangle r1;
+    Rectangle r2;
+
+    // Set dimensions of the first rectangle
+    r1.setWidth(5);
+    r1.setLength(10);
+
+    // Set dimensions of the second rectangle
+    r2.setWidth(4);
+    r2.setLength(6);
+
+    // Display dimensions and calculations for r1
+    cout << "Rectangle 1" << endl;
+    cout << "Width: " << r1.getWidth() << endl;
+    cout << "Length: " << r1.getLength() << endl;
+    cout << "Area: " << r1.calculateArea() << endl;
+    cout << "Perimeter: " << r1.calculatePerimeter() << endl;
+
+    // Display dimensions and calculations for r2
+    cout << "\nRectangle 2" << endl;
+    cout << "Width: " << r2.getWidth() << endl;
+    cout << "Length: " << r2.getLength() << endl;
+    cout << "Area: " << r2.calculateArea() << endl;
+    cout << "Perimeter: " << r2.calculatePerimeter() << endl;
+
+    return 0;
+}
