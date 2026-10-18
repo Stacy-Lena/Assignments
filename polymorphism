@@ -2,3 +2,50 @@
 Design and implement a C++ program that demonstrates polymorphism using a suitable real-world example.
 Your program should:
 Define a parent class with at least one virtual member function.Define at least two derived classes that override the virtual member function.Demonstrate runtime polymorphism by calling the overridden function through a base-class pointer or reference.Create suitable objects and demonstrate how the same function call produces different behaviours depending on the object.Use hand drawn illustrations to explain polymorphism.
+
+
+
+#include <iostream>
+using namespace std;
+
+// Parent class
+class Animal {
+public:
+    virtual void makeSound() {
+        cout << "Animal makes a sound." << endl;
+    }
+};
+
+// Derived class 1
+class Dog : public Animal {
+public:
+    void makeSound() override {
+        cout << "Dog says: Woof!" << endl;
+    }
+};
+
+// Derived class 2
+class Cat : public Animal {
+public:
+    void makeSound() override {
+        cout << "Cat says: Meow!" << endl;
+    }
+};
+
+int main() {
+    Dog d;
+    Cat c;
+
+    // Base-class pointer
+    Animal* ptr;
+
+    // Point to the Dog object
+    ptr = &d;
+    ptr->makeSound();
+
+    // Point to the Cat object
+    ptr = &c;
+    ptr->makeSound();
+
+    return 0;
+}
