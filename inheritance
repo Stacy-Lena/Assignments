@@ -1,3 +1,67 @@
-Chained InheritanceDesign and implement a C++ program that demonstrates chained (multilevel) inheritance using a suitable real-world example.
-Your program should:
-Define at least three classes arranged in an inheritance chain.Include appropriate data members and member functions in each class.Demonstrate how a derived class inherits members from its parent class.Create objects and demonstrate the use of inherited and locally defined members.Use hand drawn illustrations to explain inheritance
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Base class
+class Person {
+protected:
+    string name;
+
+public:
+    void setName(string n) {
+        name = n;
+    }
+
+    void displayName() {
+        cout << "Name: " << name << endl;
+    }
+};
+
+// Derived class 1
+class Student : public Person {
+protected:
+    string studentID;
+
+public:
+    void setStudentID(string id) {
+        studentID = id;
+    }
+
+    void displayStudentID() {
+        cout << "Student ID: " << studentID << endl;
+    }
+};
+
+// Derived class 2
+class UniversityStudent : public Student {
+private:
+    string university;
+
+public:
+    void setUniversity(string u) {
+        university = u;
+    }
+
+    void displayUniversity() {
+        cout << "University: " << university << endl;
+    }
+};
+
+int main() {
+    UniversityStudent s;
+
+    // Inherited from Person
+    s.setName("John");
+    s.displayName();
+
+    // Defined in Student
+    s.setStudentID("ST101");
+    s.displayStudentID();
+
+    // Defined in UniversityStudent
+    s.setUniversity("Makerere University");
+    s.displayUniversity();
+
+    return 0;
+}
